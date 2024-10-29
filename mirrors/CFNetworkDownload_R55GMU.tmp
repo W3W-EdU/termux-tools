@@ -1,0 +1,6219 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" data-behavior="i18n" data-environment="prod" data-server-mode="publish" data-dc="a" class="  twtr-type--chirp">
+  <head>
+    <meta charset="utf-8"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Developer Guide: Twitter API Toolkit for Google Cloud: Enterprise API | Docs | Twitter Developer Platform  </title>
+<meta name="description" content="Use the Twitter API Toolkit for Google Cloud: Enterprise API to install a trend detection framework in under an hour."/>
+
+
+
+
+
+
+
+
+  <link rel="canonical" href="https://developer.x.com/en/docs/tutorials/developer-guide--twitter-api-toolkit-for-google-cloud11"/>
+  <meta property="og:url" content="https://developer.x.com/en/docs/tutorials/developer-guide--twitter-api-toolkit-for-google-cloud11"/>
+
+
+
+
+
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Developer Guide: Twitter API Toolkit for Google Cloud: Enterprise API"/>
+<meta property="og:description" content="Use the Twitter API Toolkit for Google Cloud: Enterprise API to install a trend detection framework in under an hour."/>
+<meta property="og:image" content="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/x_sharing_card.png.twimg.768.png"/>
+<meta name="keywords"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <link rel="alternate" hreflang="en" href="https://developer.x.com/en/docs/tutorials/developer-guide--twitter-api-toolkit-for-google-cloud11"/>
+
+
+<meta name="twitter:widgets:new-embed-design" content="on"/>
+<meta name="twitter:widgets:csp" content="on"/>
+
+
+
+      <link href="https://abs.twimg.com/favicons/twitter.3.ico" rel="shortcut icon" type="image/x-icon"/>
+
+
+
+
+<script type="application/json" id="analytics-settings">{&quot;google&quot;:{&quot;accounts&quot;:[],&quot;options&quot;:{&quot;displayAdvertisingFeatures&quot;:false}},&quot;scribe&quot;:{&quot;scribeSectionWithImpression&quot;:false},&quot;trackingPixel&quot;:{},&quot;bing&quot;:{}}</script>
+
+
+
+
+
+
+<script type="application/json" class="u14-data-layer" data-component="u14-data-layer" id="data-layer">{"page":{"pageId":"b6e73dc","pageKey":"b6e73dc-en-en","pageName":"Developer Guide: Twitter API Toolkit for Google Cloud: Enterprise API","pagePath":"/content/developer-twitter/en/docs/tutorials/developer-guide--twitter-api-toolkit-for-google-cloud11","pageType":"base-page","pagePublishDate":"","language":"en","geoRegion":"en","category":{"tags":{"tagIDs":["developer-twitter:product/twitter-api"],"tagNames":["X API"]},"scribe":{"component":"tutorials/developer-guide--twitter-api-toolkit-for-google-cloud11","section":"docs","page":"developer","element":"page"}},"attribute":{}}}</script>
+
+
+
+    
+    
+      <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-bold-italic-web.woff2" as="font" type="font/woff2" crossorigin/>
+      <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-bold-web.woff2" as="font" type="font/woff2" crossorigin/>
+      <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-display-extended-black-web.woff2" as="font" type="font/woff2" crossorigin/>
+      <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-regular-web.woff2" as="font" type="font/woff2" crossorigin/>
+      <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-regular-italic-web.woff2" as="font" type="font/woff2" crossorigin/>
+      <link rel="preload" href="https://fonts.twitter.com/chirp/chirp-extended-bold-web.woff2" as="font" type="font/woff2" crossorigin/>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/css/chirp.css.twhash.a.f.41e1f29c2d4295d68b05db0725781db3.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/css/legacy-colors.css.twhash.a.f.20fd26d638816cbce52d44904fc9c3c2.css" type="text/css"/>
+
+<link rel="stylesheet" href="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/css/project.css.twhash.a.f.e4bfaad196a03b2b7ae1b47b5f7a2a8f.css" media="screen" type="text/css"/>
+
+<link rel="stylesheet" href="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/css/print.css.twhash.a.f.67de1c964d9398cbf614aab841910ad6.css" media="print" type="text/css"/>
+
+
+
+
+
+
+
+
+
+
+
+  </head>
+  <body class="
+        twtr-theme--blue
+        page tutorial-page
+        page--
+        
+        twtr-color-bg--white-neutral
+        
+        js-no-scroll
+        atm-light
+      " style="--theme-color: var(--blue-dark)" data-analytics-page="developer" data-analytics-section="docs" data-analytics-component="tutorials/developer-guide--twitter-api-toolkit-for-google-cloud11" data-analytics-element="page">
+    
+<div id="twtr-dtc-main" style="--nav-height: var(--navbar-tall)" data-dtc-rebrand-on="true" class="dtc-rebrand-flag-on">
+  
+
+
+
+
+
+
+<div id="twBearerToken" data-value="AAAAAAAAAAAAAAAAAAAAACHguwAAAAAAaSlT0G31NDEyg%2BSnBN5JuyKjMCU%3Dlhg0gv0nE7KKyiJNEAojQbn8Y3wJm1xidDK7VnKGBP4ByJwHPb" style="display:none"></div>
+
+<div id="twAuthenticationFlag" data-value="guest" style="display:none"></div>
+
+<div id="twGeoLocationRegion" data-value="other" style="display:none"></div>
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="u01-meganav__page-padding"></div>
+<div class="u01-meganav  js-twtr-nav  twtr-color-bg--white-neutral  is-fixed">
+  <div class="twtr-container--wide">
+    <div class="twtr-grid">
+      <div class="twtr-col-12">
+        <div class="u01-meganav__container" data-bg-color="white-neutral" data-home-path="/content/developer-twitter/en" data-icon-close="&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34; x=&#34;0px&#34; y=&#34;0px&#34; viewbox=&#34;0 0 24 24&#34; style=&#34;enable-background:new 0 0 24 24;&#34; xml:space=&#34;preserve&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; role=&#34;none&#34; class=&#34;twtr-icon--md&#34;> 
+ &lt;g> 
+  &lt;g> 
+   &lt;defs> 
+    &lt;rect id=&#34;SVGID_1_&#34; x=&#34;-468&#34; y=&#34;-1360&#34; width=&#34;1440&#34; height=&#34;3027&#34; /> 
+   &lt;/defs> 
+   &lt;clippath id=&#34;SVGID_2_&#34;> 
+    &lt;use xlink:href=&#34;#SVGID_1_&#34; style=&#34;overflow:visible;&#34; /> 
+   &lt;/clippath> 
+  &lt;/g> 
+ &lt;/g> 
+ &lt;rect x=&#34;-468&#34; y=&#34;-1360&#34; class=&#34;st0&#34; width=&#34;1440&#34; height=&#34;3027&#34; style=&#34;fill:rgb(0,0,0,0);stroke-width:3;stroke:rgb(0,0,0)&#34; /> 
+ &lt;path d=&#34;M13.4,12l5.8-5.8c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L12,10.6L6.2,4.8c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4
+	l5.8,5.8l-5.8,5.8c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.4,0.3,0.7,0.3s0.5-0.1,0.7-0.3l5.8-5.8l5.8,5.8c0.2,0.2,0.5,0.3,0.7,0.3
+	s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L13.4,12z&#34; /> 
+&lt;/svg>" data-icon-chevron-right="&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewbox=&#34;0 0 24 24&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; role=&#34;none&#34; class=&#34;twtr-icon&#34;> 
+ &lt;path opacity=&#34;0&#34; d=&#34;M0 0h24v24H0z&#34; /> 
+ &lt;path d=&#34;M17.207 11.293l-7.5-7.5c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L15.086 12l-6.793 6.793c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z&#34; /> 
+&lt;/svg>" data-icon-chevron-down="&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewbox=&#34;0 0 24 24&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; role=&#34;none&#34; class=&#34;twtr-icon&#34;> 
+ &lt;path opacity=&#34;0&#34; d=&#34;M0 0h24v24H0z&#34; /> 
+ &lt;path d=&#34;M20.207 7.043c-.39-.39-1.023-.39-1.414 0L12 13.836 5.207 7.043c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z&#34; /> 
+&lt;/svg>" data-icon-arrow-left="&lt;svg width=&#34;28px&#34; height=&#34;28px&#34; viewbox=&#34;0 0 28 28&#34; version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; role=&#34;none&#34; class=&#34;twtr-icon  u01-meganav__icon-arrow-left&#34;> 
+ &lt;g stroke=&#34;none&#34; stroke-width=&#34;1&#34; fill=&#34;none&#34; fill-rule=&#34;evenodd&#34; stroke-linecap=&#34;round&#34;> 
+  &lt;g transform=&#34;translate(-1216.000000, -298.000000)&#34; stroke-width=&#34;2.25&#34;> 
+   &lt;g transform=&#34;translate(1200.000000, 282.000000)&#34;> 
+    &lt;g transform=&#34;translate(17.000000, 17.000000)&#34;> 
+     &lt;path d=&#34;M0.756410256,12.8589744 L25.7179487,12.8589744&#34;>&lt;/path> 
+     &lt;path d=&#34;M13.2371795,25.3397436 L25.7179487,12.8589744&#34;>&lt;/path> 
+     &lt;path d=&#34;M13.2371795,12.4807692 L25.3397436,0.378205128&#34; transform=&#34;translate(19.288462, 6.429487) rotate(-90.000000) translate(-19.288462, -6.429487) &#34;>&lt;/path> 
+    &lt;/g> 
+   &lt;/g> 
+  &lt;/g> 
+ &lt;/g> 
+&lt;/svg>" data-left-nav-items="[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;X API&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;X API&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/products/twitter-api&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;X Ads API&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;X Ads API&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/products/x-ads-api&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;X for websites&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;X for websites&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/products/x-for-websites&#34;}],&#34;overviewTitle&#34;:&#34;Products&#34;,&#34;linkDisabled&#34;:true,&#34;title&#34;:&#34;Products&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/products&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Getting Started&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Getting Started&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/platform-overview&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Tutorials&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Tutorials&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/tutorials&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Github&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Github&#34;,&#34;path&#34;:&#34;https://github.com/xdevplatform&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;API reference index&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;API reference index&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/api-reference-index&#34;}],&#34;linkDisabled&#34;:true,&#34;title&#34;:&#34;Resources&#34;,&#34;path&#34;:&#34;https://developer.x.com/&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;X API home&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;X API home&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-api&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;X API getting started&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;X API getting started&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-api/getting-started/about-x-api&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;SDKs&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;SDKs&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-api/tools-and-libraries/sdks/overview&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Tools and Libraries&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Tools and Libraries&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-api/tools-and-libraries/v2&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;v2 migration&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;v2 migration&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-api/migrate/x-api-endpoint-map&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Enterprise APIs&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Enterprise APIs&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-api/enterprise&#34;}],&#34;linkDisabled&#34;:true,&#34;title&#34;:&#34;X API&#34;,&#34;path&#34;:&#34;https://developer.x.com/&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;X Ads API home&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;X Ads API home&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/twitter-ads-api.html&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;X Ads API getting started&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;X Ads API getting started&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-ads-api/getting-started&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Apply for access&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Apply for access&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-ads-api/apply.html&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Tools and libraries&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Tools and libraries&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-ads-api/tools-and-libraries&#34;}],&#34;linkDisabled&#34;:true,&#34;title&#34;:&#34;X Ads API&#34;,&#34;path&#34;:&#34;https://developer.x.com/&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;X for Websites home&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;X for Websites home&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/twitter-for-websites.html&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Embedded Posts&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Embedded Posts&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-for-websites/embedded-tweets/overview&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Embedded Timelines&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Embedded Timelines&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-for-websites/timelines/overview&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Embedded buttons&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Embedded buttons&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-for-websites/tweet-button/overview&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Web intents&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Web intents&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-for-websites/web-intents/overview&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;X cards&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;X cards&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs/x-for-websites/cards/overview/abouts-cards&#34;}],&#34;linkDisabled&#34;:true,&#34;title&#34;:&#34;X for Websites&#34;,&#34;path&#34;:&#34;https://developer.x.com/&#34;}],&#34;overviewTitle&#34;:&#34;Docs&#34;,&#34;linkDisabled&#34;:false,&#34;menuType&#34;:&#34;multiCategory&#34;,&#34;title&#34;:&#34;Docs&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/docs&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Build for business&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Build for business&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/use-cases/build-for-businesses&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Build for the public&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Build for the public&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/use-cases/build-for-consumers&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Do research&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Do research&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/use-cases/do-research&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Teach \u0026 learn&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Teach \u0026 learn&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/use-cases/teach-and-learn&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Build for good&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Build for good&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/use-cases/build-for-good&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Build for fun&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Build for fun&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/use-cases/build-for-fun&#34;}],&#34;overviewTitle&#34;:&#34;Use Cases&#34;,&#34;linkDisabled&#34;:true,&#34;title&#34;:&#34;Use Cases&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/navigation/left-nav-items/use-cases&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Changelog&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Changelog&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/updates/changelog&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Blog&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Blog&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/blog&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Newsletter&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Newsletter&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/updates/stay-informed&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;YouTube&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;YouTube&#34;,&#34;path&#34;:&#34;https://www.youtube.com/c/twitterdev&#34;}],&#34;linkDisabled&#34;:true,&#34;title&#34;:&#34;Stay informed&#34;,&#34;path&#34;:&#34;https://developer.x.com/&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Forums&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Forums&#34;,&#34;path&#34;:&#34;https://twittercommunity.com/&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Events&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Events&#34;,&#34;path&#34;:&#34;https://twitterdev.bevylabs.com/&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Insiders&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Insiders&#34;,&#34;path&#34;:&#34;https://developer.twitter.com/en/community/insiders&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Community leaders&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Community leaders&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/community/leaders&#34;}],&#34;linkDisabled&#34;:true,&#34;title&#34;:&#34;Connect&#34;,&#34;path&#34;:&#34;https://developer.x.com/&#34;}],&#34;overviewTitle&#34;:&#34;Community&#34;,&#34;linkDisabled&#34;:false,&#34;menuType&#34;:&#34;multiCategory&#34;,&#34;title&#34;:&#34;Community&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/community&#34;}]" data-right-nav-items="[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Policies&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Policies&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/developer-terms&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Developer agreement&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Developer agreement&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/developer-terms/agreement-and-policy/source&#34;}],&#34;overviewTitle&#34;:&#34;Support&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Support&#34;,&#34;path&#34;:&#34;https://developer.x.com/en/support&#34;},{&#34;isActive&#34;:false,&#34;hasActiveChild&#34;:false,&#34;children&#34;:[],&#34;overviewTitle&#34;:&#34;Developer Portal&#34;,&#34;linkDisabled&#34;:false,&#34;title&#34;:&#34;Developer Portal&#34;,&#34;path&#34;:&#34;https://developer.twitter.com/en/portal/petition/essential/basic-info&#34;}]" data-cta-enabled="true" data-profile-enabled="true" data-cta-link-new-tab="false" data-root-page-title="Developer Platform">
+          
+        </div>
+        <div aria-label="Search" class="u01-meganav__search-modal twtr-color-bg--blue-dark" role="dialog" aria-modal="true">
+          
+
+
+
+
+<button aria-label="Close search menu" class="u04-search__close-button js-close-search" type="button">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve" aria-hidden="true" focusable="false" role="none" class="u04-search__close-svg  twtr-icon"> 
+ <g> 
+  <g> 
+   <defs> 
+    <rect id="SVGID_1_" x="-468" y="-1360" width="1440" height="3027" /> 
+   </defs> 
+   <clippath id="SVGID_2_"> 
+    <use xlink:href="#SVGID_1_" style="overflow:visible;" /> 
+   </clippath> 
+  </g> 
+ </g> 
+ <rect x="-468" y="-1360" class="st0" width="1440" height="3027" style="fill:rgb(0,0,0,0);stroke-width:3;stroke:rgb(0,0,0)" /> 
+ <path d="M13.4,12l5.8-5.8c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L12,10.6L6.2,4.8c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4
+	l5.8,5.8l-5.8,5.8c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.4,0.3,0.7,0.3s0.5-0.1,0.7-0.3l5.8-5.8l5.8,5.8c0.2,0.2,0.5,0.3,0.7,0.3
+	s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L13.4,12z" /> 
+</svg>
+</button>
+
+<div class="search-bar search-bar--js" data-theme="blue" data-search-path="https://developer.x.com/en/search-results.html">
+  <input placeholder="Type your search here" type="search" autocomplete="off" class="search-bar__input" name="q"/>
+  <button id="u04-search__button" class="u04-search__button" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true" focusable="false" role="none" class="u04-search__button-icon twtr-icon--mega  twtr-color-fill--white-neutral"> 
+ <path opacity="0" d="M0 0h24v24H0z" /> 
+ <path d="M22.06 19.94l-3.73-3.73C19.38 14.737 20 12.942 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c1.943 0 3.738-.622 5.21-1.67l3.73 3.73c.292.294.676.44 1.06.44s.768-.146 1.06-.44c.586-.585.586-1.535 0-2.12zM11 17c-3.308 0-6-2.692-6-6s2.692-6 6-6 6 2.692 6 6-2.692 6-6 6z" /> 
+</svg>
+  </button>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+  
+
+
+
+<main class="twtr-color-bg--white-neutral    lazyload" id="twtr-main">
+
+  
+  
+
+<div class="u07  is-hidden" aria-hidden="true">
+  <div class="u07__item  u07__bg-color--neutral">
+    <div class="u07__item-content">
+      <div class="u07__notification  twtr-type--bold-200  chirp--bold-200  twtr-color--gray-900">
+        
+      </div>
+      <div class="u07__close">
+        <button type="button" class="u07__close-btn">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" width="46" height="72" viewbox="0 0 46 72" aria-hidden="true" focusable="false" role="none" class="twtr-icon">
+ <path d="M27.243 36l14.879-14.879a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23 31.758 8.122 16.879a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242L18.758 36 3.879 50.879A2.998 2.998 0 0 0 6.001 56a2.99 2.99 0 0 0 2.121-.879L23 40.242l14.879 14.879A2.991 2.991 0 0 0 40 56a2.998 2.998 0 0 0 2.121-5.121L27.243 36z" />
+</svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+
+
+
+<div class="root responsivegrid">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="ct01-columns aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            ">
+
+  <div class="ct01__content  twtr-container  ">
+    <div class="ct01__item  twtr-grid    ">
+      
+        <div class="ct01__column
+                    twtr-col-md-9  twtr-order-0-xs  twtr-order-0-md  has-no-margin-bottom
+                    
+                    ">
+          <div class="ct01__wrapper  is-vertically-centered  ">
+            
+  
+  
+  
+      
+      
+      
+      <div class="cr02-responsive-visibility twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+<div class="cr02">
+  <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  ">
+    
+  
+  
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component--last twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-700">
+</div></div>
+
+  
+  
+  </div>
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="cr02-responsive-visibility twtr-component">
+
+
+
+
+
+
+
+
+
+
+<div class="cr02">
+  <div class="cr02__item twtr-hidden--sm  twtr-hidden--xs  ">
+    
+  
+  
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component--last twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-500">
+</div></div>
+
+  
+  
+  </div>
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="ct09-justify-content twtr-component">
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<div class="ct09      " style="--ct09-fixed-height: ;">
+  <div class="ct09__item">
+    <div class="ct09__wrapper  is-direction--row  is-justified-start  is-aligned-start  has-no-margin-bottom  twtr-spacing--pb-0">
+      
+  
+  
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  ">
+  <p><span style="font-size: 18px; letter-spacing: 0.1px;"><b>Developer Guide</b></span></p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-500">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 b01-v3__copy--no-margin">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h1 class="b01-v3__headline  chirp--display-850  twtr-color--black  b01-v3--align-left  chirp--fluid">
+          Twitter API Toolkit for Google Cloud: Enterprise API
+        </h1>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component--last twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-500">
+</div></div>
+
+  
+  
+    </div>
+  </div>
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="ct09-justify-content twtr-component">
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<div class="ct09      " style="--ct09-fixed-height: ;">
+  <div class="ct09__item">
+    <div class="ct09__wrapper  is-direction--row  is-justified-start  is-aligned-start  has-no-margin-bottom  twtr-spacing--pb-0">
+      
+  
+  
+  
+      
+      
+      
+      <div class="b19-label twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+
+
+  <span class="Label  Label--gray  ">Twitter API</span>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b19-label twtr-component--last twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+  <span class="Label  Label--gray  ">Google Cloud</span>
+
+
+
+</div>
+
+  
+  
+    </div>
+  </div>
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="cr02-responsive-visibility twtr-component">
+
+
+
+
+
+
+
+
+
+
+<div class="cr02">
+  <div class="cr02__item twtr-hidden--sm  twtr-hidden--xs  ">
+    
+  
+  
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component--last twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-500">
+</div></div>
+
+  
+  
+  </div>
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="cr02-responsive-visibility twtr-component--last twtr-component">
+
+
+
+
+
+
+
+
+
+
+<div class="cr02">
+  <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  ">
+    
+  
+  
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component--last twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-700">
+</div></div>
+
+  
+  
+  </div>
+</div>
+</div>
+
+  
+  
+          </div>
+        </div>
+      
+        <div class="ct01__column
+                    twtr-col-md-3  twtr-order-1-xs  twtr-order-1-md
+                    
+                    ">
+          <div class="ct01__wrapper  is-vertically-centered  ">
+            
+  
+  
+  
+      
+      
+      
+      <div class="cr02-responsive-visibility twtr-component--last twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+<div class="cr02">
+  <div class="cr02__item twtr-hidden--sm  twtr-hidden--xs  ">
+    
+  
+  
+  
+      
+      
+      
+      <div class="ct09-justify-content twtr-component--last twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<div class="ct09      has-fixed-height--px" data-fixed-height="500" style="--ct09-fixed-height: 500;">
+  <div class="ct09__item">
+    <div class="ct09__wrapper  is-direction--row  is-justified-start  is-aligned-start  has-no-margin-bottom  twtr-spacing--pb-0">
+      
+  
+  
+  
+  
+    </div>
+  </div>
+</div>
+</div>
+
+  
+  
+  </div>
+</div>
+</div>
+
+  
+  
+          </div>
+        </div>
+      
+    </div>
+  </div>
+  
+  
+</div>
+</div>
+<div class="ct01-columns aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            ">
+
+  <div class="ct01__content  twtr-container  ">
+    <div class="ct01__item  twtr-grid    ">
+      
+        <div class="ct01__column
+                    twtr-col-md-12
+                    none
+                    ">
+          <div class="ct01__wrapper    ">
+            
+  
+  
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-900">
+</div></div>
+
+  
+      
+      
+      
+      <div class="ct01-columns twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            has-no-gutter
+            
+            
+            
+            ">
+
+  <div class="ct01__content    ">
+    <div class="ct01__item  twtr-grid    ">
+      
+        <div class="ct01__column
+                    twtr-col-md-6  twtr-order-0-xs  twtr-order-0-md  has-no-margin-bottom
+                    none
+                    ">
+          <div class="ct01__wrapper    ">
+            
+  
+  
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-400">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--white  ">
+  <p><span class="chirp--regular-200 chirp--stepped"><b>By Prasanna Selvaraj</b></span></p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-500">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--white chirp--stepped ">
+  <p>Detecting trends from Twitter can be complex work. Twitter APIs offer several options for receiving and processing Tweets on the fly. In order to categorize trends, Tweet themes and topics must be identified—another potentially complex endeavor as it involves integrating with NER (Named Entity Recognition) / NLP (Natural Language Processing) services.</p>
+<p> </p>
+<p>The Twitter API Toolkit for Google Cloud: Enterprise API solves these challenges and supports the developer with a trend detection framework that can be installed on Google Cloud in about  60 minutes or less.</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="cr02-responsive-visibility twtr-component--last twtr-component">
+
+
+
+
+
+
+
+
+
+
+<div class="cr02">
+  <div class="cr02__item twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl  ">
+    
+  
+  
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component--last twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mb-500">
+</div></div>
+
+  
+  
+  </div>
+</div>
+</div>
+
+  
+  
+          </div>
+        </div>
+      
+        <div class="ct01__column
+                    twtr-col-md-1  twtr-order-1-xs  twtr-order-1-md  has-no-margin-bottom
+                    none
+                    ">
+          <div class="ct01__wrapper    ">
+            
+  
+  
+  
+  
+          </div>
+        </div>
+      
+        <div class="ct01__column
+                    twtr-col-md-5  twtr-order-2-xs  twtr-order-2-md  has-no-margin-bottom
+                    none
+                    ">
+          <div class="ct01__wrapper    ">
+            
+  
+  
+  
+      
+      
+      
+      <div class="cr02-responsive-visibility twtr-component--last twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+<div class="cr02">
+  <div class="cr02__item twtr-hidden--sm  twtr-hidden--xs  ">
+    
+  
+  
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-300 twtr-color--white  twtr-component-space--md">
+  <p>Resources</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--white-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mb-200">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 ">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--white  ">
+  <p><span style="font-size: 18px; letter-spacing: 0.1px;"><b><a href="https://developer.twitter.com/en/docs/twitter-api/enterprise" rel="nofollow">Twitter Enterprise API</a></b></span></p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-50">
+</div></div>
+
+  
+      
+      
+      
+      <div class="ct09-justify-content twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+<div class="ct09      " style="--ct09-fixed-height: ;">
+  <div class="ct09__item">
+    <div class="ct09__wrapper  is-direction--column  is-justified-start  is-aligned-start  has-no-margin-bottom  twtr-spacing--pb-0">
+      
+  
+  
+  
+  
+    </div>
+  </div>
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mb-200">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mb-200">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--white  ">
+  <p><span style="font-size: 18.0px; letter-spacing: 0.1px;"><b><a href="https://github.com/twitterdev/gcloud-toolkit-power-track" rel="nofollow">Github Repo</a></b></span></p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-50">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--white-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="ct09-justify-content twtr-component--last twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+<div class="ct09      " style="--ct09-fixed-height: ;">
+  <div class="ct09__item">
+    <div class="ct09__wrapper  is-direction--column  is-justified-start  is-aligned-start  has-no-margin-bottom  twtr-spacing--pb-0">
+      
+  
+  
+  
+  
+    </div>
+  </div>
+</div>
+</div>
+
+  
+  
+  </div>
+</div>
+</div>
+
+  
+  
+          </div>
+        </div>
+      
+    </div>
+  </div>
+  
+  
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component--last twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-900">
+</div></div>
+
+  
+  
+          </div>
+        </div>
+      
+    </div>
+  </div>
+  
+    <div class="ct01__background">
+
+      
+      <picture>
+        <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/textures/texture_tldr_m.jpg.twimg.768.jpg" media="(max-width: 600px)"/>
+        <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/textures/texture_tldr_d.jpg.twimg.2560.jpg" media="(min-width: 1920px)"/>
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/textures/texture_tldr_d.jpg.twimg.1920.jpg" width="2884" height="1900" alt data-object-fit="cover" class="ct01__background-img  lazyload false"/>
+      </picture>
+
+      
+      
+
+      
+      
+    </div>
+  
+  
+</div>
+</div>
+<div class="b27-spacing aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-900">
+</div></div>
+<div class="ct01-columns aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            ">
+
+  <div class="ct01__content  twtr-container  ">
+    <div class="ct01__item  twtr-grid    ">
+      
+        <div class="ct01__column
+                    twtr-col-md-8 twtr-offset-2-md  twtr-order-1-xs  twtr-order-1-md  has-no-margin-bottom
+                    none
+                    ">
+          <div class="ct01__wrapper    ">
+            
+  
+  
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--black  b01-v3--align-left  ">
+          Why use the Twitter API toolkit for Google Cloud: Enterprise API?
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <ul><li><p>Twitter API Toolkit for Google Cloud: Enterprise API -  framework can be used to detect macro and micro-level trends across domains and industry verticals</p>
+</li><li><p>Designed to horizontally scale and process higher volumes of Tweets in the order of millions of Tweets/day</p>
+</li><li><p>Automates the data pipeline process to ingest Tweets into Google Cloud</p>
+</li><li><p>Visualization of trends in an easy-to-use dashboard</p>
+</li></ul>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--dark-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 ">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 b01-v3__copy--no-margin">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h3 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--gray-900  b01-v3--align-left  ">
+          How much time will this take? 60 mins is all you need
+        </h3>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-400">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component--last twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>In 60 minutes, or less, you’ll learn the basics of the Twitter API and Tweet annotations—plus, you’ll gain experience in Google Cloud, Analytics, and the foundations of data science.</p>
+<p> </p>
+
+</div>
+</div>
+
+  
+  
+          </div>
+        </div>
+      
+    </div>
+  </div>
+  
+  
+</div>
+</div>
+<div class="ct01-columns aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            ">
+
+  <div class="ct01__content  twtr-container  ">
+    <div class="ct01__item  twtr-grid    ">
+      
+        <div class="ct01__column
+                    twtr-col-md-8 twtr-offset-2-md  twtr-order-1-xs  twtr-order-1-md  has-no-margin-bottom
+                    none
+                    ">
+          <div class="ct01__wrapper    ">
+            
+  
+  
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component--last twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+<div class="b27 ">
+</div></div>
+
+  
+  
+          </div>
+        </div>
+      
+    </div>
+  </div>
+  
+  
+</div>
+</div>
+<div class="b27-spacing aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-400">
+</div></div>
+<div class="ct01-columns aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            ">
+
+  <div class="ct01__content  twtr-container  ">
+    <div class="ct01__item  twtr-grid    ">
+      
+        <div class="ct01__column
+                    twtr-col-md-8 twtr-offset-2-md  twtr-order-1-xs  twtr-order-1-md  has-no-margin-bottom
+                    none
+                    ">
+          <div class="ct01__wrapper    ">
+            
+  
+  
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--light-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-300">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 b01-v3__copy--no-margin">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h3 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--gray-900  b01-v3--align-left  ">
+          What Cloud Services this toolkit will leverage and what are the costs?
+        </h3>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-400">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component--last twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900 chirp--stepped ">
+  <ul><li>This toolkit requires a Twitter Enterprise API account (pricing info will be provided by your account manager); <a href="https://developer.twitter.com/en/products/twitter-api/enterprise/application" rel="nofollow">sign-up here</a> </li><li>This toolkit leverages Google BigQuery, App Engine, and DataStudio.   For information on pricing, refer to the Google Cloud <a href="https://cloud.google.com/pricing" rel="nofollow">pricing</a></li></ul>
+
+</div>
+</div>
+
+  
+  
+          </div>
+        </div>
+      
+    </div>
+  </div>
+  
+  
+</div>
+</div>
+<div class="b27-spacing aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+<div class="b27 ">
+</div></div>
+<div class="ct01-columns aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            ">
+
+  <div class="ct01__content  twtr-container  ">
+    <div class="ct01__item  twtr-grid    ">
+      
+        <div class="ct01__column
+                    twtr-col-md-8 twtr-offset-2-md  twtr-order-1-xs  twtr-order-1-md  has-no-margin-bottom
+                    none
+                    ">
+          <div class="ct01__wrapper    ">
+            
+  
+  
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--light-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-600">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-300">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 b01-v3__copy--no-margin">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h3 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--gray-900  b01-v3--align-left  chirp--fluid">
+          What kind of dashboard can you build with the toolkit? 
+        </h3>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-400">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <ul><li>Below are a few real-time dashboard illustrations that are built with the Filtered Stream toolkit. </li><li><p>Fig 1, depicts a real-time ‘Gaming’ dashboard that depicts the conversations on Video games on Twitter. You can get insights on the trending topics in Gaming, popular hashtags, and the underlying Tweets that are streamed in real-time.</p>
+</li><li><p>Similarly, Fig 2 depicts the real-time analysis of the ‘Cryptocurrencies and Digital Assets’ </p>
+</li><li><p>This toolkit helps you to build a real-time trend detection dashboard </p>
+</li><li><p>Monitor real-time trends for configured rules as they unfold on the platform</p>
+</li></ul>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b04-image twtr-component">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  <div class="b04 twtr-component-space--md ">
+    <div class="b04__image  b04__image--auto">
+      
+        
+  
+  
+  <picture>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/gaming-dashboard.png.twimg.768.png" media="(max-width: 767px)"/>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/gaming-dashboard.png.twimg.2560.png" media="(min-width: 1920px)"/>
+    
+    
+    
+
+    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 936 500%22%3E%3C/svg%3E" width="936" height="500" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/gaming-dashboard.png.twimg.1920.png" alt data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--auto
+          is-aligned-center
+          
+          
+          lazyload
+          "/>
+  </picture>
+
+  
+
+      
+    </div>
+
+    
+  </div>
+
+</div>
+
+  
+      
+      
+      
+      <div class="b04-image twtr-component">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  <div class="b04 twtr-component-space--md ">
+    <div class="b04__image  b04__image--auto">
+      
+        
+  
+  
+  <picture>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/crypto-dashboard.png.twimg.768.png" media="(max-width: 767px)"/>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/crypto-dashboard.png.twimg.2560.png" media="(min-width: 1920px)"/>
+    
+    
+    
+
+    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 936 658%22%3E%3C/svg%3E" width="936" height="658" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/crypto-dashboard.png.twimg.1920.png" alt data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--auto
+          is-aligned-center
+          
+          
+          lazyload
+          "/>
+  </picture>
+
+  
+
+      
+    </div>
+
+    
+  </div>
+
+</div>
+
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--dark-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-500">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--black  b01-v3--align-left  ">
+          Give me the big picture
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-500">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b04-image twtr-component">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  <div class="b04 twtr-component-space--md ">
+    <div class="b04__image  b04__image--auto">
+      
+        
+  
+  
+  <picture>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/big-picture.png.twimg.768.png" media="(max-width: 767px)"/>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/big-picture.png.twimg.2560.png" media="(min-width: 1920px)"/>
+    
+    
+    
+
+    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 2730 2037%22%3E%3C/svg%3E" width="2730" height="2037" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/big-picture.png.twimg.1920.png" alt data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--auto
+          is-aligned-center
+          
+          
+          lazyload
+          "/>
+  </picture>
+
+  
+
+      
+    </div>
+
+    
+  </div>
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>This toolkit is comprised of 5 core components that are responsible for listening to real-time Tweets, pushing Tweets to a topic/queue, a CRON job that triggers a Tweet loader service which pulls the Tweets from the topic/queue to store them in a database, and, finally, Tweet visualization in a dashboard that connects to the database via a SQL query.</p>
+<p><span style="letter-spacing: 0.0px;"><b><i>Tweet streamer service (nodeJs component)</i></b></span></p>
+<p>The Tweet streamer service is responsible for listening to the real-time Twitter <a href="https://developer.twitter.com/en/docs/twitter-api/enterprise/powertrack-api/overview" rel="nofollow">PowerTrack API</a> and pushes the Tweets temporarily to a Topic that is based on Google PubSub. The PowerTrack rules are governed by the <a href="https://developer.twitter.com/en/docs/twitter-api/enterprise/powertrack-api/guides/powertrack_rules_and_filtering" rel="nofollow">PowerTrack Rules API</a>.</p>
+<p><span style="letter-spacing: 0.0px;"><b><i>Stream topic based on Google PubSub</i></b></span></p>
+<p><span style="letter-spacing: 0.0px;">The stream topic based on </span><a href="https://cloud.google.com/pubsub" rel="nofollow">Google PubSub</a><span style="letter-spacing: 0.0px;"> acts as a shock absorber for this architecture. When there is a sudden surge of Tweets, the toolkit can handle the increased volume of Tweets with the help of PubSub. The PubSub topic will act as temporary storage for the Tweets and batch them for the Tweet loader service to store the Tweets in the database. Also, this will act as a shield to protect the database from a huge number of ingesting calls to persist the Tweets.</span></p>
+<p><span style="letter-spacing: 0.0px;"><b><i>CRON job based on Google Cloud Scheduler</i></b></span></p>
+<p><span style="letter-spacing: 0.0px;">A CRON job based on Google Cloud Scheduler will act as a poller that will trigger the Tweet loader service at regular intervals.</span></p>
+<p><span style="letter-spacing: 0.0px;"><b><i>Tweet loader service (nodeJs component)</i></b></span></p>
+<p><span style="letter-spacing: 0.0px;">The Tweet loader service that gets triggered based on the CRON job will pull the Tweets in a batch mode (i.e. 500 Tweets per pull, configurable via config.js file), and store the Tweets in a BigQuery database.</span></p>
+<p><span style="letter-spacing: 0.0px;"><b><i>Google DataStudio as a Dashboard for analytics</i></b></span></p>
+<p>Google DataStudio is used to create a dashboard for trend detection and connects to the BigQuery via a SQL query with a time interval as a parameter. The time interval is a range (30 minutes, 60 minutes) that will be used to query the Tweets based on their creation time. Trends can be analyzed based on the time interval which can range from minutes to hours. For example, you can analyze trends “60 minutes ago”, passing the time interval variable to the SQL query.</p>
+<p> </p>
+<p>As a user of this toolkit, you need to perform four steps:</p>
+<ol><li><p>Add rules to the stream with the <a href="https://developer.twitter.com/en/docs/twitter-api/enterprise/powertrack-api/api-reference/powertrack-rules" rel="nofollow">PowerTrack rules API</a> endpoint</p>
+</li><li><p>Install and involve the toolkit from <a href="https://github.com/twitterdev/gcloud-toolkit-power-track" rel="nofollow">GitHub</a> in your Google Cloud project</p>
+</li><li><p>Configure the CRON job - Google Cloud Scheduler</p>
+</li><li><p>Configure the dashboard, by connecting to the BigQuery database with DataStudio</p>
+</li></ol>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--dark-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 ">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--black  b01-v3--align-left  ">
+          Prerequisites: As a developer, what do I need to run this toolkit?
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <ul><li><p>Twitter Enterprise API access(pricing info will be provided by your account manager); <a href="https://developer.twitter.com/en/products/twitter-api/enterprise/application" rel="nofollow">Sign up here</a>.</p>
+</li><li>[Optional] Get a Twitter API bearer token for accessing Engagement API. <a href="https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens" rel="nofollow">Refer to this</a> doc.</li><li><p>A Google Cloud Account. <a href="https://www.google.com/aclk?sa&#61;l&amp;ai&#61;DChcSEwjq8LzG8c_0AhUXE9QBHUQBC9QYABADGgJvYQ&amp;sig&#61;AOD64_2epUp76ekL53Vngr8B5cAjNAIaCQ&amp;nis&#61;1&amp;ved&#61;2ahUKEwjAubPG8c_0AhX5mGoFHdnPBMcQqyQoAHoECAMQBw&amp;adurl&#61;" rel="nofollow">Sign up here</a></p>
+</li></ul>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-500">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--dark-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 ">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--black  b01-v3--align-left  ">
+          How should I use this toolkit? - Tutorial
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-500">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b05-video twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+<div>
+  <div>
+  
+
+  <div class="t01__video  js-video-player  video_player  twtr-component-space--lg" data-title="PowerTrack-Architecture.mov" data-src="/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/PowerTrack-Architecture.mov">
+    <div class="video_player__wrapper">
+        <video src="/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/PowerTrack-Architecture.mov" title="PowerTrack-Architecture.mov" data-autoplay="false" data-object-fit="cover">
+            <source src="/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/PowerTrack-Architecture.mov" type="video/mp4" data-setup='{}'/>
+          Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+        </video>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--black  b01-v3--align-left  ">
+          Step One: Add rules to the stream
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b05-video twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+<div>
+  <div>
+  
+
+  <div class="t01__video  js-video-player  video_player  twtr-component-space--lg" data-title="PowerTrack-Toolkit-Installation.mov" data-src="/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/PowerTrack-Toolkit-Installation.mov">
+    <div class="video_player__wrapper">
+        <video src="/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/PowerTrack-Toolkit-Installation.mov" title="PowerTrack-Toolkit-Installation.mov" data-autoplay="false" data-object-fit="cover">
+            <source src="/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/PowerTrack-Toolkit-Installation.mov" type="video/mp4" data-setup='{}'/>
+          Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+        </video>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p> </p>
+<ol><li><p>Add rules to the stream. You can add/update/delete the rules via the <a href="https://developer.twitter.com/en/docs/twitter-api/enterprise/powertrack-api/api-reference/powertrack-rules" rel="nofollow">PowerTrack Rules API</a></p>
+</li></ol>
+<p> </p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">curl -v -X POST -uexample@customer.com &#34;https://data-api.x.com/rules/powertrack/accounts/companyname/publishers/twitter/prod.json&#34; -d &#39;{&#34;rules&#34;:[{&#34;value&#34;:&#34;(#bitcoin OR bitcoin OR &#34;Doge coin&#34; OR from:noaa) lang:en&#34;,&#34;tag&#34;:&#34;Crypto&#34;}]}&#39;</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>2. Alternatively, you can add rules via the GNIP console. You should also have access to the <a href="https://console.gnip.com/" rel="nofollow">GNIP console</a>. Navigate to the GNIP console and select the PowerTrack stream you want to listen to with this application and click “Rules”.</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b04-image twtr-component">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  <div class="b04 twtr-component-space--md ">
+    <div class="b04__image  b04__image--auto">
+      
+        
+  
+  
+  <picture>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GNIP-console.png.twimg.768.png" media="(max-width: 767px)"/>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GNIP-console.png.twimg.2560.png" media="(min-width: 1920px)"/>
+    
+    
+    
+
+    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 324%22%3E%3C/svg%3E" width="512" height="324" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GNIP-console.png.twimg.1920.png" alt data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--auto
+          is-aligned-center
+          
+          
+          lazyload
+          "/>
+  </picture>
+
+  
+
+      
+    </div>
+
+    
+  </div>
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p> </p>
+<p>3. In the “Edit Rules” dialog section, enter the rules and click “Update”. The rules must be compliant with the <a href="https://developer.twitter.com/en/docs/twitter-api/enterprise/powertrack-api/guides/powertrack_rules_and_filtering" rel="nofollow">PowerTrack rules</a> language</p>
+<p> </p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>4. An example PowerTrack rule below for monitoring keywords related to Cryptocurrencies and NFT.</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component--last twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">(NFT OR NFTs) (cryotocurrency OR crypto) (doge OR doge coin) (Solana OR Shiba Inu OR Shiba OR Binance) </code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+  
+          </div>
+        </div>
+      
+    </div>
+  </div>
+  
+  
+</div>
+</div>
+<div class="b27-spacing aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mb-0">
+</div></div>
+<div class="ct01-columns aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<div class="ct01
+            
+            twtr-padding__nested--top
+            twtr-padding__nested--bottom
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            ">
+
+  <div class="ct01__content  twtr-container  ">
+    <div class="ct01__item  twtr-grid    ">
+      
+        <div class="ct01__column
+                    twtr-col-md-8 twtr-offset-2-md  twtr-order-1-xs  twtr-order-1-md  has-no-margin-bottom
+                    none
+                    ">
+          <div class="ct01__wrapper    ">
+            
+  
+  
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component twtr-component--first">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--light-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-600">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 b01-v3__copy--no-margin">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h3 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--gray-900  b01-v3--align-left  chirp--fluid">
+          Step Two: Install and configure the toolkit (Tweet Streamer and Loader service)
+        </h3>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-400">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900 chirp--stepped ">
+  <ol><li><p><a href="https://github.com/twitterdev/gcloud-toolkit-power-track" rel="nofollow">Github repo</a></p>
+</li><li><p>Access the Google Cloud console and launch the “Cloud Shell”. Ensure you are on the right Google Cloud Project</p>
+</li><li>Set the <a href="https://support.google.com/googleapi/answer/7014113?hl&#61;en" rel="nofollow">Google Project ID</a> and enable BigQuery API by running the following commands:</li></ol>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">gcloud config set project &lt;&lt;PROJECT_ID&gt;&gt;
+gcloud services enable bigquery.googleapis.com
+</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p></p><p>4. Ensure you have access to the BigQuery data owner role. Navigate to Google Cloud Console -&gt; Choose IAM under the main menu -&gt; Add a new IAM permission</p>
+
+<p><span style="font-family: Chirp, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Helvetica, Arial, sans-serif; letter-spacing: 0px;">Principal: Your Google account email address</span><br />
+</p>
+<p>Role: BigQuery Data Owner</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b04-image twtr-component">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  <div class="b04 twtr-component-space--md ">
+    <div class="b04__image  b04__image--sm">
+      
+        
+  
+  
+  <picture>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-filtered-stream/google-cloud-iam.png.twimg.768.png" media="(max-width: 767px)"/>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-filtered-stream/google-cloud-iam.png.twimg.2560.png" media="(min-width: 1920px)"/>
+    
+    
+    
+
+    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 464%22%3E%3C/svg%3E" width="512" height="464" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-filtered-stream/google-cloud-iam.png.twimg.1920.png" alt data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--sm
+          is-aligned-center
+          
+          
+          lazyload
+          "/>
+  </picture>
+
+  
+
+      
+    </div>
+
+    
+  </div>
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p></p><p>5. From the “Cloud shell terminal”  command prompt, download the code for the toolkit be executing the command:</p>
+
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">git clone https://github.com/twitterdev/gcloud-toolkit-power-track.git</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p></p><p>6. Navigate to the source code folder</p>
+
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">cd gcloud-toolkit-power-track</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p></p><p>7. Make changes to the configuration file. Use your favorite editor like vi or emacs<br />
+Once you’ve made the following changes, save them and quit the editor mode.</p>
+
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">vi config.js
+
+Edit config.power_track_api object in config.js </code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p> </p>
+<p>a. Update the “pt_stream_path” with the “Stream Path” from the <a href="https://console.gnip.com/" rel="nofollow">GNIP console</a> under the “Overview” section. Copy the stream URL from the string “/stream”</p>
+<p> </p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b04-image twtr-component">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  <div class="b04 twtr-component-space--md ">
+    <div class="b04__image  b04__image--auto">
+      
+        
+  
+  
+  <picture>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GNIP-URL.png.twimg.768.png" media="(max-width: 767px)"/>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GNIP-URL.png.twimg.2560.png" media="(min-width: 1920px)"/>
+    
+    
+    
+
+    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 177%22%3E%3C/svg%3E" width="512" height="177" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GNIP-URL.png.twimg.1920.png" alt data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--auto
+          is-aligned-center
+          
+          
+          lazyload
+          "/>
+  </picture>
+
+  
+
+      
+    </div>
+
+    
+  </div>
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p></p><p>b. Update the GNIP username and password. These are the credentials required to log into the GNIP console</p>
+<p><span style="font-family: Chirp, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Helvetica, Arial, sans-serif; letter-spacing: 0px;">c. Update the Twitter Bearer token</span></p>
+
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">Twitter API bearer token (ensure the word ‘Bearer’ must be prepended before the token with a space
+
+Edit config.gcp_infra object in config.js</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p></p><p>d. Update the <a href="https://support.google.com/googleapi/answer/7014113?hl&#61;en" rel="nofollow">Google project ID</a></p>
+<p><span style="font-family: Chirp, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Helvetica, Arial, sans-serif; letter-spacing: 0px;">e. Update the “topicName” and “subscriptionName” with any unique string. Recommend something like “trends-topic” for topic name and “trends-sub” for subscription name</span></p>
+<p><span style="font-family: Chirp, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Helvetica, Arial, sans-serif; letter-spacing: 0px;">f. The “messageCount” attribute is the maximum number of messages that would be pulled from the topic by the stream loader service</span></p>
+<p><span style="font-family: Chirp, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Helvetica, Arial, sans-serif; letter-spacing: 0px;">g. The “streamReconnectCounter” represents the number of times stream loader service will withstand empty message pulls from topics before reconnecting. Recommend to leave it as 500 (max) and 3, however, would require calibration based on the topic you are listening to.</span></p>
+
+<p> </p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">Edit config.gcp_infra.bq object in config.js</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>h. <span style="font-family: Chirp, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Helvetica, Arial, sans-serif; letter-spacing: 0px;">Update the “dataSetId” attribute with a unique string. Recommend “TrendsDS”</span></p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">Edit config.gcp_infra.bq.table object in config.js</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>i. Update the “tweets” and “engagement” attributes with unique table names. Recommend “TweetTrends” and “Engagements”</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">gcloud app logs tail -s default</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>8. Back in the cloud shell, deploy the code in AppEngine by executing the below command: Note that the deployment can take a few minutes.</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">gcloud app deploy
+ Authorize the command
+	If prompted: 
+ Choose a region for deployment like (18 for USEast1)
+ Accept the default config with Y</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>9. <span style="font-family: Chirp, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Helvetica, Arial, sans-serif; letter-spacing: 0px;">After the deployment, get the URL endpoint for the deployed application with the command:</span></p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">gcloud app browse -s default
+	The above command will output an app endpoint URL similar to this one:
+https://trend-detection-dot.uc.r.appspot.com/</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>10. <span style="font-family: Chirp, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Helvetica, Arial, sans-serif; letter-spacing: 0px;">Use the endpoint URL from the output of step h) and make a CURL or browser request with “/stream” appended to the request path. This will invoke the toolkit and it starts listening to the Tweets as defined by the rules in the “stream/rules” endpoint.</span></p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">curl https://&lt;&lt;APP_ENDPOINT_URL&gt;&gt;/stream</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>11. Start tailing the log file for the deployment application</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">gcloud app logs tail -s default</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>12. If the stream is not connected, reconnect to the stream with the below command:</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">curl https://&lt;&lt;APP_ENDPOINT_URL&gt;&gt;/stream</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--dark-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 ">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--black  b01-v3--align-left  ">
+          Step Three: Configure the CRON job - Google Cloud Scheduler
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <ol><li><p>Create a Google Cloud Scheduler Job by navigating to the Google Cloud console and clicking the Cloud Scheduler option under the main menu.</p>
+</li><li><p>Create a new Cloud Scheduler job and define the schedule with frequency as below: Ensure a space between each asterisk like “* * * * *”</p>
+</li></ol>
+<p><span style="font-family: Chirp, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Helvetica, Arial, sans-serif; letter-spacing: 0px;">This will ensure that the Cloud Scheduler job triggers every minute.</span><br />
+</p>
+<p> </p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">* * * * *</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b04-image twtr-component">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  <div class="b04 twtr-component-space--md ">
+    <div class="b04__image  b04__image--sm">
+      
+        
+  
+  
+  <picture>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-filtered-stream/cloud-scheduler.png.twimg.768.png" media="(max-width: 767px)"/>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-filtered-stream/cloud-scheduler.png.twimg.2560.png" media="(min-width: 1920px)"/>
+    
+    
+    
+
+    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 500 512%22%3E%3C/svg%3E" width="500" height="512" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-filtered-stream/cloud-scheduler.png.twimg.1920.png" alt data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--sm
+          is-aligned-center
+          
+          
+          lazyload
+          "/>
+  </picture>
+
+  
+
+      
+    </div>
+
+    
+  </div>
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>3. Configure the execution with “Target Type” as “HTTP” and insert your application endpoint URL as below:</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">https://&lt;&lt;YOUR_APP_ENDPOINT_URL&gt;&gt;/stream/poll/2/30000</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b04-image twtr-component">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  <div class="b04 twtr-component-space--md ">
+    <div class="b04__image  b04__image--sm">
+      
+        
+  
+  
+  <picture>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-filtered-stream/cloud-scheduler-2.png.twimg.768.png" media="(max-width: 767px)"/>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-filtered-stream/cloud-scheduler-2.png.twimg.2560.png" media="(min-width: 1920px)"/>
+    
+    
+    
+
+    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 409 512%22%3E%3C/svg%3E" width="409" height="512" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-filtered-stream/cloud-scheduler-2.png.twimg.1920.png" alt data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--sm
+          is-aligned-center
+          
+          
+          lazyload
+          "/>
+  </picture>
+
+  
+
+      
+    </div>
+
+    
+  </div>
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>The request “/stream/poll” points to the “Tweet loader” service. Parameters 2 and 30000 refer to the invocation frequency of the Tweet loader service and the time interval in milliseconds. For example “2/30000” will invoke the “Tweet loader” service 2 times within a minute with a delay of 30000 milliseconds or 30 seconds. If you anticipate more Tweets for a topic, increase the invocation frequency and decrease the delay to increase the consumption. This is a calibration that can be fine-tuned based on monitoring of a specific topic like “Crypto” or “Doge coin”  </p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--black  b01-v3--align-left  ">
+          [Optional] Step four: Configure the CRON job for Tweet engagements - Google Cloud Scheduler
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <ol><li><p>Create a Google Cloud Scheduler Job by navigating to the Google Cloud console and clicking the Cloud Scheduler option under the main menu.</p>
+</li><li><p>Create a new Cloud Scheduler job and define the schedule with frequency as below: Ensure a space between each asterisk like “5 * * * *”</p>
+</li></ol>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">5 * * * *
+
+This will ensure that the Cloud Scheduler job triggers every hour at minute 05.
+</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b04-image twtr-component">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  <div class="b04 twtr-component-space--md ">
+    <div class="b04__image  b04__image--fixed">
+      
+        
+  
+  
+  <picture>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GCP-cs3.png.twimg.768.png" media="(max-width: 767px)"/>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GCP-cs3.png.twimg.2560.png" media="(min-width: 1920px)"/>
+    
+    
+    
+
+    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 245 506%22%3E%3C/svg%3E" style="width: 245px" width="245px" height="506px" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GCP-cs3.png.twimg.1920.png" alt data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--fixed
+          is-aligned-center
+          
+          
+          lazyload
+          "/>
+  </picture>
+
+  
+
+      
+    </div>
+
+    
+  </div>
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>3. Configure the execution with “Target Type” as “HTTP” and insert your application endpoint URL as below:</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">https://&lt;&lt;YOUR_APP_ENDPOINT_URL&gt;&gt;/stream/engagement</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>Set the HTTP method to GET and add an HTTP header of name User-Agent and value Google-Cloud-Scheduler.</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b04-image twtr-component">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  <div class="b04 twtr-component-space--md ">
+    <div class="b04__image  b04__image--md">
+      
+        
+  
+  
+  <picture>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GCP-cs4.png.twimg.768.png" media="(max-width: 767px)"/>
+    <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GCP-cs4.png.twimg.2560.png" media="(min-width: 1920px)"/>
+    
+    
+    
+
+    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 365 512%22%3E%3C/svg%3E" width="365" height="512" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/GCP-cs4.png.twimg.1920.png" alt data-object-fit="cover" class="b04__img
+          b04__img-cover
+          b04__img--md
+          is-aligned-center
+          
+          
+          lazyload
+          "/>
+  </picture>
+
+  
+
+      
+    </div>
+
+    
+  </div>
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>The request “/stream/engagement” triggers the<a href="https://developer.twitter.com/en/docs/twitter-api/enterprise/engagement-api/overview" rel="nofollow"> Engagement API</a> /totals endpoint and saves the engagement metrics in the Engagement table defined in the config.js file. You can get the most “liked” Tweet or Tweet with the most video views by joining the Engagement table with the Tweet table.</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--dark-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 ">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--black  b01-v3--align-left  ">
+          Step five: Configure the Trends dashboard with Google DataStudio
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b05-video twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+<div>
+  <div>
+  
+
+  <div class="t01__video  js-video-player  video_player  twtr-component-space--lg" data-title="PowerTrack-Visualization.mov" data-src="/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/PowerTrack-Visualization.mov">
+    <div class="video_player__wrapper">
+        <video src="/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/PowerTrack-Visualization.mov" title="PowerTrack-Visualization.mov" data-autoplay="false" data-object-fit="cover">
+            <source src="/content/dam/developer-twitter/docs/toolkit-gcloud-power-track/PowerTrack-Visualization.mov" type="video/mp4" data-setup='{}'/>
+          Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+        </video>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <ol><li><p>SQL query to be used for Trend detection in DataStudio</p>
+</li><li><p>Replace your &lt;&lt;datasetId.table_name&gt;&gt; in the below SQL. The ‘datasetId’ and ‘tweet_table_name’ can be determined from the config.js file</p>
+</li></ol>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">SELECT
+ context.context_entity_name AS CTX_ENTITY, context.context_domain_name AS CTX_DOMAIN_NAME, context.context_domain_id AS CTX_ID, entity.normalized_text as NER_TEXT,
+ created_at, entity.type as NER_TYPE, GT.text as TWT_TEXT, GT.tweet_url AS TWT_URL, GT.user.screen_name AS USR_SCR_NM, GT.user.user_url AS USR_URL,
+ GT.user.followers_count AS FOLLOWERS_CT, GT.user.friends_count AS FRNDS_CT, GT.user.favourites_count AS FAV_CT, GT.user.statuses_count AS STS_CT, U_MEN.name as USR_MNTS, HASH_T.text as HASH_TAGS, GT.lang AS LANG, LOC.country AS CNTRY, GT.tweet_type as TWT_TYP,
+ COUNT(*) AS MENTIONS
+FROM
+ `&lt;&lt;datasetID.table&gt;&gt;` AS GT,
+ UNNEST(entities.annotations.context) AS context,
+ UNNEST(entities.annotations.entity) AS entity,
+ UNNEST(entities.user_mentions) AS U_MEN,
+ UNNEST(entities.hashtags) AS HASH_T,
+ UNNEST(user.derived.locations) AS LOC
+where created_at &gt; DATETIME_SUB(current_datetime(), INTERVAL @time_interval MINUTE)
+GROUP BY
+ CTX_ENTITY, CTX_DOMAIN_NAME, NER_TEXT, NER_TYPE, CTX_ID, created_at, TWT_TEXT, TWT_URL, USR_SCR_NM, USR_URL, FOLLOWERS_CT, FRNDS_CT, FAV_CT, STS_CT, USR_MNTS, HASH_TAGS, LANG, CNTRY, TWT_TYP
+ORDER BY
+ MENTIONS DESC</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>3. SQL to be used for engagement metrics</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">WITH ENGAGEMENT AS(
+SELECT id, favorites, replies, retweets, quote_tweets, video_views, ROW_NUMBER() OVER (PARTITION BY id ORDER BY created_at desc) as row_num
+FROM `&lt;&lt;DATASET.ENGAGEMENT_TABLE&gt;&gt;` 
+ORDER BY favorites DESC
+),
+TWEETS AS(
+    SELECT id, tweet_url, tweet_type, entities, lang, created_at FROM `&lt;&lt;DATASET.TWEET_TABLE&gt;&gt;` 
+)
+SELECT E.id as TWT_ID, E.favorites as FAVS, E.replies AS REPLIES, E.quote_tweets AS QUOTES, E.retweets AS RETWEETS,
+E.video_views AS VIDEO_VIEWS, G.lang AS LANG, G.tweet_url AS TWT_URL, G.created_at AS CREATED_AT, G.tweet_type AS TWT_TYP, G.entities 
+FROM ENGAGEMENT AS E JOIN TWEETS AS G ON e.id = G.id WHERE E.row_num = 1</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--dark-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 ">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--black  b01-v3--align-left  ">
+          Step six: Twitter Compliance
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>It is crucial that any developer who stores Twitter content offline ensures the data reflects user intent and the current state of content on Twitter. For example, when someone on Twitter deletes a Tweet or their account, protects their Tweets, or scrubs the geoinformation from their Tweets, it is critical for both Twitter and our developers to honor that person’s expectations and intent. The <a href="https://developer.twitter.com/en/docs/twitter-api/compliance/batch-compliance/introduction" rel="nofollow">batch compliance endpoints</a> provide developers an easy tool to help maintain Twitter data in compliance with the <a href="https://developer.twitter.com/en/developer-terms/policy" rel="nofollow">Twitter Developer Agreement and Policy</a>.</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b27-spacing twtr-component">
+
+
+
+
+
+
+
+
+
+<div class="b27 ">
+</div></div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>Optional - Delete the Google cloud project to avoid any overage costs</p>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b19-code-snippet twtr-component-space--md twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="b19-snippet  b19__theme--light">
+  <!--Rendering snippet component with tabs-->
+  
+  <!--Rendering snippet component single code-->
+  
+  <!--To support legacy mode(initial version) of snippet component-->
+  
+  <div class="t05-inline-code-snippet  ">
+    <!--line-numbers and language are prismjs classes, these classes are used to render line numbers and code properly-->
+    <pre class="line-numbers   t05__pre--with-button  ">
+      <code tabindex="0" class="t05__copy  language-markup">gcloud projects delete &lt;&lt;PROJECT_ID&gt;&gt;</code>
+    </pre>
+    <button aria-label="Copy to clipboard" class="t05__button">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="72" viewBox="0 0 52 72"><path d="M48.119 29.875L28.124 9.88A3.005 3.005 0 0 0 26 8.999H8.001A5.007 5.007 0 0 0 3 14v43.999A5.007 5.007 0 0 0 8.001 63h36A5.006 5.006 0 0 0 49 57.999V32c0-.861-.147-1.391-.881-2.125zM29 27.999v-8.758L38.759 29H30a1 1 0 0 1-1-1.001zM10 57.001A1 1 0 0 1 9 56V15.999a1 1 0 0 1 1-1.001h13V32a3 3 0 0 0 3 2.998h17V56a1 1 0 0 1-1 1.001H10z"/></svg>
+
+      <div class="t05__tooltip  Tooltip">
+        <div class="Tooltip-inner">
+          <span class="t05__tooltip-text  Tooltip-content">Code copied to clipboard</span>
+        </div>
+      </div>
+    </button>
+  </div>
+
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b12-horizontal-rule twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+<div class="
+  b12
+  b12-thickness--base
+  twtr-color-border--dark-gray-neutral
+  
+  twtr-margin__nested--top
+  twtr-margin__nested--bottom">
+</div>
+</div>
+
+  
+      
+      
+      
+      <div class="b01-headline-v3 twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--extended-bold-500  twtr-color--black  b01-v3--align-left  ">
+          Troubleshooting
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+  
+      
+      
+      
+      <div class="b02-rich-text-v3 twtr-component--last twtr-component">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>Use this <a href="https://twittercommunity.com/t/the-twitter-api-toolkit-for-google-cloud-enterprise-api/170080" rel="nofollow">forum</a> for support, issues, and questions.</p>
+
+</div>
+</div>
+
+  
+  
+          </div>
+        </div>
+      
+    </div>
+  </div>
+  
+  
+</div>
+</div>
+<div class="b27-spacing aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-900">
+</div></div>
+<div class="ct17-banner-container aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+<div class="ct17__banner-outer-container ct17--top-transition-tear">
+  <div class="ct17__banner-container ct17--bg-desktop-horizontal-center ct17--bg-desktop-vertical-center ct17--bg-mobile-horizontal-center ct17--bg-mobile-vertical-center ct17--split-desktop-horizontal-center ct17--split-desktop-vertical-center ct17--bottom-transition-none ct17--alignment-right ct17--content-columns-seven ">
+    <div class="ct17__background">
+      <picture>
+        <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/textures/texture_bottombanner_m.jpg.twimg.768.jpg" media="(max-width: 600px)"/>
+        <source srcset="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/textures/texture_bottombanner_d.jpg.twimg.2560.jpg" media="(min-width: 1920px)"/>
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/redesign-2021-images/textures/texture_bottombanner_d.jpg.twimg.1920.jpg" alt="true" data-object-fit="cover" class="ct17__background-img  lazyload"/>
+      </picture>
+    </div>
+    <div class="ct17__wrapper twtr-container">
+      <div class="ct17__content-wrapper">
+        <div class="ct17__content">
+          
+
+
+
+
+    
+    
+    <div class="b27-spacing">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-700">
+</div></div>
+
+
+    
+    
+    <div class="b01-headline-v3">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="b01-v3 twtr-component-space--md">
+    <div class="b01-v3__item">
+      <div class="b01-v3__copy">
+        
+        <h2 class="b01-v3__headline  chirp--display-700  twtr-color--black  b01-v3--align-left  ">
+          What's next?
+        </h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+    
+    
+    <div class="b27-spacing">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-500">
+</div></div>
+
+
+    
+    
+    <div class="b02-rich-text-v3">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b02-v3 twtr-rte-v3 twtr-scribe-clicks-within chirp--regular-200 twtr-color--gray-900  twtr-component-space--md">
+  <p>Watch the Google Next 22 session. <a href="https://www.youtube.com/watch?v&#61;U3kFoebfYkA" rel="nofollow">Unlock the power of Twitter and omni-channel analytics using Google Cloud</a></p>
+<p>Process, analyze, and visualize Tweets with the <a href="/en/docs/tutorials/developer-guide--twitter-api-toolkit-for-google-cloud" rel="nofollow">Twitter API Toolkit for Google Cloud: Recent Search</a></p>
+<p>Read this guide on <a href="https://developer.twitter.com/en/docs/tutorials/post-processing-twitter-data-with-the-google-cloud-platform" rel="nofollow">Post-processing Twitter data with the Google Cloud Platform</a> for incorporating the search query with a user interface, advanced analytics, and integration with Natural language processing</p>
+<p>You also might be interested in this blog post on <a href="https://blog.twitter.com/developer/en_us/topics/tips/2021/three-approaches-to-topic-discovery-with-twitter-data" rel="nofollow">Topic discovery with Twitter data</a></p>
+
+</div>
+</div>
+
+
+    
+    
+    <div class="b27-spacing">
+
+
+
+
+
+
+
+
+
+<div class="b27 twtr-spacing--mbf-600">
+</div></div>
+
+
+
+        </div>
+        
+        <div class="ct17__image-component" data-split-image-alignment="ct17--alignment-right">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+    
+</div>
+</div>
+
+
+
+  
+
+
+  <div class="twtr-container">
+    
+
+<div id="twtr-article-embedded-survey" class="b32"></div>
+
+  </div>
+
+</main>
+
+  <div>
+
+
+<footer class="u02fs  twtr-background--blue-extra-light  twtr-background--gray-0">
+    <div class="twtr-container">
+      <div class="twtr-grid">
+
+        <div class="u02fs__footer-link-col  twtr-col-12  twtr-col-md-4">
+          
+          <a href="https://developer.x.com/en/more/developer-terms/agreement-and-policy" title="Developer policy and terms" target="_blank" class="u02fs__footer-link  twtr-type--roman-50  twtr-color--gray-900">
+            Developer policy and terms
+          </a>
+        </div>
+
+        <div class="u02fs__footer-link-col  twtr-col-12  twtr-col-md-4">
+          
+          <a href="http://x.com/xdevelopers" title="Follow @XDevelopers" target="_blank" class="u02fs__footer-link  twtr-type--roman-50  twtr-color--gray-900">
+            Follow @XDevelopers
+          </a>
+        </div>
+
+        <div class="u02fs__footer-link-col  twtr-col-12  twtr-col-md-4  u02fs__subscribe-button-col">
+          
+          
+  
+
+  <a class="b03__button
+      twtr-btn
+      twtr-btn--secondary
+      twtr-btn--size-default
+      twtr-btn-color--secondary-blue
+      u02fs__button
+      twtr-btn__icon--
+      twtr-scribe-clicks" href="/en/twitterdev-news-subscription" rel="noopener noreferrer" target="_blank" data-twtr-scribe-section="b03-button" data-twtr-scribe-element="8YS4" data-twtr-scribe-component="subscribe-to-developer-news" data-text="Subscribe to developer news">
+
+    
+    
+
+    <!--/* Button text -->
+    Subscribe to developer news
+
+    
+    
+
+    
+    
+  </a>
+
+        </div>
+
+      </div>
+    </div>
+</footer>
+</div>
+<div>
+
+<footer class="u02 twtr-color-bg--black-neutral">
+  <div class="twtr-container">
+    <div class="u02__wrapper">
+      <div class="u02__row  u02__network-map">
+        <div class="twtr-grid  u02__twtr-grid">
+          <div class="js-accordion  u02__column">
+            
+            <h4 class="u02__column__parent  twtr-type--bold-14  twtr-color--gray-0 is-opaque">
+              X platform
+              <span class="u02__icon  twtr-dtc-fill--extra-light-gray  twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9.5" viewbox="0 0 17 9.5" aria-hidden="true" focusable="false" role="none" class="twtr-icon--sm"> 
+ <path d="M16.707.293c-.39-.39-1.023-.39-1.414 0L8.5 7.086 1.707.293c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z" /> 
+</svg>
+              </span>
+            </h4>
+            
+            <ul class="u02__column__list">
+              <li class="u02__link-item">
+                <a href="https://x.com/" title="X.com" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  X.com
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://status.twitterstat.us/" title="Status" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Status
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://help.x.com/resources/accessibility" title="Accessibility" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Accessibility
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://publish.x.com" title="Embed a post" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Embed a post
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://privacy.x.com/" title="Privacy Center" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Privacy Center
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://transparency.x.com/" title="Transparency Center" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Transparency Center
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://help.x.com/using-x/download-the-x-app" title="Download the X app" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Download the X app
+                </a>
+              </li>
+            </ul>
+          </div>
+        
+          <div class="js-accordion  u02__column">
+            
+            <h4 class="u02__column__parent  twtr-type--bold-14  twtr-color--gray-0 is-opaque">
+              X Corp.
+              <span class="u02__icon  twtr-dtc-fill--extra-light-gray  twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9.5" viewbox="0 0 17 9.5" aria-hidden="true" focusable="false" role="none" class="twtr-icon--sm"> 
+ <path d="M16.707.293c-.39-.39-1.023-.39-1.414 0L8.5 7.086 1.707.293c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z" /> 
+</svg>
+              </span>
+            </h4>
+            
+            <ul class="u02__column__list">
+              <li class="u02__link-item">
+                <a href="https://about.x.com/en/who-we-are/our-company.html" title="About the company" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  About the company
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://blog.x.com/" title="Company news" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Company news
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://about.x.com/en/who-we-are/brand-toolkit.html" title="Brand toolkit" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Brand toolkit
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://careers.x.com/" title="Jobs and internships" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Jobs and internships
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://investor.twitterinc.com/" title="Investors" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Investors
+                </a>
+              </li>
+            </ul>
+          </div>
+        
+          <div class="js-accordion  u02__column">
+            
+            <h4 class="u02__column__parent  twtr-type--bold-14  twtr-color--gray-0 is-opaque">
+              Help
+              <span class="u02__icon  twtr-dtc-fill--extra-light-gray  twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9.5" viewbox="0 0 17 9.5" aria-hidden="true" focusable="false" role="none" class="twtr-icon--sm"> 
+ <path d="M16.707.293c-.39-.39-1.023-.39-1.414 0L8.5 7.086 1.707.293c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z" /> 
+</svg>
+              </span>
+            </h4>
+            
+            <ul class="u02__column__list">
+              <li class="u02__link-item">
+                <a href="https://help.x.com/" title="Help Center" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Help Center
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://help.x.com/en/using-twitter" title="Using X" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Using X
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://create.x.com/" title="X for creators" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  X for creators
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://business.x.com/en/help.html" title="Ads Help Center" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Ads Help Center
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://help.x.com/en/managing-your-account" title="Managing your account" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Managing your account
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://preferencecenter.x.com/" title="Email Preference Center" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Email Preference Center
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://help.x.com/en/rules-and-policies" title="Rules and policies" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Rules and policies
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://help.x.com/en/forms.html" title="Contact us" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Contact us
+                </a>
+              </li>
+            </ul>
+          </div>
+        
+          <div class="js-accordion  u02__column">
+            
+            <h4 class="u02__column__parent  twtr-type--bold-14  twtr-color--gray-0 is-opaque">
+              Developer resources
+              <span class="u02__icon  twtr-dtc-fill--extra-light-gray  twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9.5" viewbox="0 0 17 9.5" aria-hidden="true" focusable="false" role="none" class="twtr-icon--sm"> 
+ <path d="M16.707.293c-.39-.39-1.023-.39-1.414 0L8.5 7.086 1.707.293c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z" /> 
+</svg>
+              </span>
+            </h4>
+            
+            <ul class="u02__column__list">
+              <li class="u02__link-item">
+                <a href="https://developer.x.com/en" title="Developer home" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Developer home
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://developer.x.com/en/docs" title="Documentation" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Documentation
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://twittercommunity.com/" title="Forums" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Forums
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://developer.x.com/en/community" title="Communities" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Communities
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://blog.x.com/developer/" title="Developer blog" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Developer blog
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://blog.x.com/engineering/en_us.html" title="Engineering blog" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Engineering blog
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://developer.x.com/en/more/developer-terms" title="Developer terms" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Developer terms
+                </a>
+              </li>
+            </ul>
+          </div>
+        
+          <div class="js-accordion  u02__column">
+            
+            <h4 class="u02__column__parent  twtr-type--bold-14  twtr-color--gray-0 is-opaque">
+              Business resources
+              <span class="u02__icon  twtr-dtc-fill--extra-light-gray  twtr-hidden--md  twtr-hidden--lg  twtr-hidden--xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="9.5" viewbox="0 0 17 9.5" aria-hidden="true" focusable="false" role="none" class="twtr-icon--sm"> 
+ <path d="M16.707.293c-.39-.39-1.023-.39-1.414 0L8.5 7.086 1.707.293c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414l7.5 7.5c.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z" /> 
+</svg>
+              </span>
+            </h4>
+            
+            <ul class="u02__column__list">
+              <li class="u02__link-item">
+                <a href="https://business.x.com/en/advertising.html" title="Advertise" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Advertise
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://business.x.com/" title="X for business" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  X for business
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://business.x.com/en/resources.html" title="Resources and guides" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Resources and guides
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://marketing.x.com/" title="X for marketers" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  X for marketers
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://marketing.x.com/en/insights" title="Marketing insights" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Marketing insights
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://marketing.x.com/en/success-stories" title="Brand inspiration" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  Brand inspiration
+                </a>
+              </li>
+            
+              <li class="u02__link-item">
+                <a href="https://www.xadsacademy.com/sl/5c3e29ed" title="X Ads Academy" target="_blank" class="u02__link  twtr-type--roman-14 twtr-color--gray-0  is-opaque  has-hover">
+                  X Ads Academy
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="u02__row  u02__legal  twtr-spacing--pt-500">
+        <div class="twtr-grid  u02__twtr-grid">
+          <div class="u02__column  u02__column--bottom">
+            <span class="u02__column-footnote  twtr-type--roman-14  twtr-color--gray-0  is-opaque">
+              &copy; 2024 X Corp.
+            </span>
+          </div>
+          
+            <div class="u02__column  u02__column--bottom">
+              <a href="https://help.x.com/rules-and-policies/twitter-cookies" title="Cookies" target="_blank" class="u02__column-footnote  twtr-type--roman-14  twtr-color--gray-0  is-opaque has-hover">
+                Cookies
+              </a>
+            </div>
+          
+            <div class="u02__column  u02__column--bottom">
+              <a href="https://x.com/privacy" title="Privacy" target="_blank" class="u02__column-footnote  twtr-type--roman-14  twtr-color--gray-0  is-opaque has-hover">
+                Privacy
+              </a>
+            </div>
+          
+            <div class="u02__column  u02__column--bottom">
+              <a href="https://x.com/tos" title="Terms and conditions" target="_blank" class="u02__column-footnote  twtr-type--roman-14  twtr-color--gray-0  is-opaque has-hover">
+                Terms and conditions
+              </a>
+            </div>
+          
+          <div class="u02__column  u02__column--bottom  u08__language-selector">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+  
+
+
+
+<script async src="https://platform.twitter.com/widgets.js"></script>
+
+
+<div id="page-props" data-page-title="Developer Guide: Twitter API Toolkit for Google Cloud: Enterprise API" data-page-path="/content/developer-twitter/en/docs/tutorials/developer-guide--twitter-api-toolkit-for-google-cloud11">
+</div>
+
+
+<script type="text/javascript" src="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/js/core.js.twhash.a.f.69ab45e5cc5f1ff23c02417e39e6fd30.js"></script>
+<script type="text/javascript" src="https://cdn.cms-twdigitalassets.com/etc/designs/developer2-twitter/public/js/project.js.twhash.a.f.4b50ff616821ce2f51bb2cd7cb3aa61e.js"></script>
+
+
+
+    
+<script src="https://cdn.cms-twdigitalassets.com/etc/designs/developer-twitter/clientlib-twtr-profile-adapter.min.twhash.a.cl.c3b119a4cc2249caed364b89790624a4.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="u12" class="u12-data-protection-notice">
+
+    
+    <div class="u12-data-protection-notice__item  u12-data-protection-notice__item--b is-hidden">
+      
+
+  
+  
+
+  <div class="u12b-opt-in" id="u12b" data-cname="twtr_pixel_opt_in">
+    <div class="u12b-opt-in__item  u12-data-protection-notice__notice">
+      <div class="u12b-opt-in__content">
+        <div class="u12b-opt-in__copy">
+          <p class="mtc-font  twtr-font">
+            <b>Did someone say … cookies?</b><br /><br />
+
+  X and its partners use cookies to provide you with a better, safer and
+  faster service and to support our business. Some cookies are necessary to use
+  our services, improve our services, and make sure they work properly.
+  <a href="https://help.twitter.com/rules-and-policies/twitter-cookies" target="_blank">Show more about your choices</a>.
+
+
+          </p>
+        </div>
+        <div class="u12b-opt-in__choice twtr-scribe-clicks-within">
+          <ul class="u12b-opt-in__choice-list">
+            <li class="u12b-opt-in__choice-list-item">
+              <button class="u12b-opt-in__button  is-blue  u12b-opt-in__button--accept  mtc-font  twtr-font  js-accept twtr-scribe-clicks" data-twtr-scribe-section="u12-data-protection-notice" data-twtr-scribe-element="J1ZY" data-twtr-scribe-component="data-protection-notice">
+                  Accept all cookies
+              </button>
+            </li>
+            <li class="u12b-opt-in__choice-list-item">
+              <button class="u12b-opt-in__button  is-naked  u12b-opt-in__button--decline  mtc-font  twtr-font  js-decline twtr-scribe-clicks" data-twtr-scribe-section="u12-data-protection-notice" data-twtr-scribe-element="J1ZY" data-twtr-scribe-component="data-protection-notice">
+                  Refuse non-essential cookies
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </div>
+
+  </div>
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.cms-twdigitalassets.com/etc/designs/common-twitter/clientlib-u12-data-protection-notice.min.twhash.a.cl.8d93205985d36dea4268f79e373e2b02.css" type="text/css">
+<script src="https://cdn.cms-twdigitalassets.com/etc/designs/common-twitter/clientlib-u12-data-protection-notice.min.twhash.a.cl.2a99ddbbc90e8bfb92321b4ae52ba5ff.js"></script>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+  </body>
+</html>
